@@ -1,0 +1,57 @@
+.Centered_Object{
+	margin: 0;
+  	position: absolute;
+  	top: 40%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+input[type=text] {
+	width: 70vw;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+  	border: 3px solid #ccc;
+  	-webkit-transition: 0.5s;
+  	transition: 0.3s;
+  	outline: none;
+	border-radius: 40px;
+}
+
+input[type=text]:focus {
+	border: 3px solid rgb(0, 0, 0);
+}
+
+.Form_Submit_Button {
+	display: inline-block;
+	padding: 5px 100px;
+	font-size: 24px;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	outline: none;
+	color: #fff;
+	background-color: #ff1515;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 0 5px #000000;
+}
+  
+.Form_Submit_Button:hover {background-color: #ff1515}
+  
+.Form_Submit_Button:active {
+	background-color: #ff1515;
+	box-shadow: 0 1px #000000;
+	transform: translateY(4px);
+  	transition: 0.1s;
+}
+
+#Bg-Video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}

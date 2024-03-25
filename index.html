@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<!--
+    The journalist looks for clues for the news.
+    An unbiased story must tell all sides.
+    But maybe it's best to only tell one.
+    For Freedom or Equality, you must choose.
+    Or should you?
+    While they ponder the question reading this line.
+    This is not the right direction.
+    There is nothing more to see here.
+    No clues lie among this news.
+-->
+
+<html>
+    <head>
+        <title>Your choices effect lifes!</title>
+
+        <link rel="stylesheet" href="Style.css">
+        <link rel="icon" type="image/png" href="img/Favicon.png">
+    </head>
+
+    <body>
+
+        <div class="Centered_Object">
+            <form id="Censor_Form">
+                <input type="text" id="Text_Input" placeholder="Hidden Message Here..."><br><br>
+                <input type="submit" value="Censor" class="Form_Submit_Button">
+                </form><br>
+        </div>
+
+
+        <video autoplay muted loop id="Bg-Video">
+            <source src="video/BOYL_End_Screen_Background.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
+
+    </body>
+
+    <script>
+        document.getElementById("Censor_Form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+    
+            // Get the input value
+            var message = document.getElementById("Text_Input").value;
+    
+            // Append the input value to the URL
+            var currentUrl = window.location.origin; // Use window.location.origin instead of window.location.href
+            var newUrl = currentUrl + "/" + encodeURIComponent(message);
+    
+            // Redirect to the new URL
+            window.location.href = newUrl;
+        });
+    </script>
+    
+
+</html>
