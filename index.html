@@ -39,16 +39,10 @@
 
     <script>
         document.getElementById("Censor_Form").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the default form submission
-    
-            // Get the input value
+            event.preventDefault();
             var message = document.getElementById("Text_Input").value;
-    
-            // Append the input value to the URL
-            var currentUrl = window.location.origin; // Use window.location.origin instead of window.location.href
+            var currentUrl = window.location.origin;
             var newUrl = currentUrl + "/" + encodeURIComponent(message);
-    
-            // Redirect to the new URL
             window.location.href = newUrl;
         });
     </script>
