@@ -101,9 +101,10 @@ input[type=text]:focus {
 }
 
 audio {
-	width: 60%;
-
+	width: 50%;
+	transform: scale(1.8);
 }
+
 
 #Bg-Video {
     position: fixed;

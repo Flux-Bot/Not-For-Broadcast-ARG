@@ -48,7 +48,7 @@
 <script>
     function handleFormSubmit(event) {
         event.preventDefault();
-        var message = this.querySelector('input[type="text"]').value;
+        var message = this.querySelector('input[type="text"]').value.toLowerCase();
         var currentUrl = window.location.origin;
         var newUrl = currentUrl + "/" + encodeURIComponent(message);
         window.location.href = newUrl;
