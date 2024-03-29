@@ -13,56 +13,48 @@
 -->
 
 <html>
-    <head>
-        <title>Your choices effect lifes!</title>
+<head>
+    <title>Your choices affect lives!</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="icon" type="image/png" href="img/Favicon.png">
+</head>
 
-        <link rel="stylesheet" href="Style.css">
-        <link rel="icon" type="image/png" href="img/Favicon.png">
-    </head>
-
-    <body>
-
-        <div class="content-desktop">
-            <div class="Centered_Object">
-                <form id="Censor_Form_Desktop">
-                    <input type="text" id="Text_Input" placeholder="Enter Hidden Message..."><br><br>
-                    <input type="submit" value="Censor" class="Form_Submit_Button_Desktop">
-                    </form><br>
-            </div>
+<body>
+    <div class="content-desktop">
+        <div class="Centered_Object">
+            <form id="Censor_Form_Desktop">
+                <input type="text" id="Text_Input_Desktop" placeholder="Enter Hidden Message..."><br><br>
+                <input type="submit" value="Censor" class="Form_Submit_Button_Desktop">
+            </form><br>
         </div>
+    </div>
 
-        <div class="content-mobile">
-            <div class="Centered_Object">
-                <form id="Censor_Form_Mobile">
-                    <input type="text" id="Text_Input" placeholder="Enter Hidden Message..."><br><br>
-                    <input type="submit" value="Censor" class="Form_Submit_Button_Mobile">
-                    </form><br>
-            </div>
+    <div class="content-mobile">
+        <div class="Centered_Object">
+            <form id="Censor_Form_Mobile">
+                <input type="text" id="Text_Input_Mobile" placeholder="Enter Hidden Message..."><br><br>
+                <input type="submit" value="Censor" class="Form_Submit_Button_Mobile">
+            </form><br>
         </div>
+    </div>
 
+    <video autoplay muted loop id="Bg-Video">
+        <source src="video/BOYL_End_Screen_Background.webm" type="video/webm">
+        Your browser does not support the video tag.
+    </video>
 
-        <video autoplay muted loop id="Bg-Video">
-            <source src="video/BOYL_End_Screen_Background.webm" type="video/webm">
-            Your browser does not support the video tag.
-        </video>
+</body>
 
-    </body>
+<script>
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        var message = this.querySelector('input[type="text"]').value;
+        var currentUrl = window.location.origin;
+        var newUrl = currentUrl + "/" + encodeURIComponent(message);
+        window.location.href = newUrl;
+    }
 
-    <script>
-        document.getElementById("Censor_Form_Desktop").addEventListener("submit", function(event) {
-            event.preventDefault();
-            var message = document.getElementById("Text_Input").value;
-            var currentUrl = window.location.origin;
-            var newUrl = currentUrl + "/" + encodeURIComponent(message);
-            window.location.href = newUrl;
-        });
-
-        document.getElementById("Censor_Form_Mobile").addEventListener("submit", function(event) {
-            event.preventDefault();
-            var message = document.getElementById("Text_Input").value;
-            var currentUrl = window.location.origin;
-            var newUrl = currentUrl + "/" + encodeURIComponent(message);
-            window.location.href = newUrl;
-        });
-    </script>
+    document.getElementById("Censor_Form_Desktop").addEventListener("submit", handleFormSubmit);
+    document.getElementById("Censor_Form_Mobile").addEventListener("submit", handleFormSubmit);
+</script>
 </html>
